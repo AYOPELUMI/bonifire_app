@@ -1,12 +1,10 @@
 import 'package:auto_route/annotations.dart';
-import 'package:bonfire_app/features/bonfire/presentation/widgets/button_widget.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/gradient_bg.dart';
-import 'package:bonfire_app/features/bonfire/presentation/widgets/speech/microphone.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/render_svg.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/speech/speech_widget.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/time_display.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/title_widget.dart';
-import 'package:bonfire_app/res/colors.dart';
+
 import 'package:bonfire_app/res/gap.dart';
 import 'package:bonfire_app/res/images.dart';
 import 'package:flutter/material.dart';
@@ -102,7 +100,6 @@ class BonfireScreen extends ConsumerWidget {
                   ],
                 ),
                 Spacer(),
-
                 // User info card
                 UserInfoCard(
                   userName: bonfireData.userName,
@@ -131,8 +128,7 @@ class BonfireScreen extends ConsumerWidget {
                     );
                   }).toList(),
                 ),
-
-                const SizedBox(height: 11),
+                11.verticalSpacing,
                 SpeechWidget()
               ],
             ),
