@@ -1,4 +1,5 @@
 import 'package:auto_route/annotations.dart';
+import 'package:bonfire_app/features/bonfire/presentation/widgets/Bottom%20Navigation/bottom_nav_item.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/gradient_bg.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/render_svg.dart';
 import 'package:bonfire_app/features/bonfire/presentation/widgets/speech/speech_widget.dart';
@@ -30,34 +31,19 @@ class BonfireScreen extends ConsumerWidget {
           selectedIconTheme: IconThemeData(size: 24),
           type: BottomNavigationBarType.fixed,
           items: [
-            BottomNavigationBarItem(
-                // backgroundColor: Colors.red,
-                icon: RenderSvg(
-                  svgPath: BonfireImages.card_svg,
-                  useSvgColor: true,
-                ),
-                label: ""),
-            BottomNavigationBarItem(
-                backgroundColor: Colors.transparent,
-                icon: RenderSvg(
-                  svgPath: BonfireImages.fire_svg,
-                  useSvgColor: true,
-                ),
-                label: ""),
-            BottomNavigationBarItem(
-                backgroundColor: Colors.transparent,
-                icon: RenderSvg(
-                  svgPath: BonfireImages.message_svg,
-                  useSvgColor: true,
-                ),
-                label: ""),
-            BottomNavigationBarItem(
-                backgroundColor: Colors.transparent,
-                icon: RenderSvg(
-                  svgPath: BonfireImages.profile_svg,
-                  useSvgColor: true,
-                ),
-                label: ""),
+            bottomNavigationBarItem(
+              isNotified: false,
+              svgPath: BonfireImages.card_svg,
+            ),
+            bottomNavigationBarItem(
+                svgPath: BonfireImages.fire_svg, isNotified: true),
+            bottomNavigationBarItem(
+              isNotified: true,
+              value: "10",
+              svgPath: BonfireImages.message_svg,
+            ),
+            bottomNavigationBarItem(
+                svgPath: BonfireImages.profile_svg, isNotified: false),
           ]),
       backgroundColor: Colors.transparent,
       body: Stack(
